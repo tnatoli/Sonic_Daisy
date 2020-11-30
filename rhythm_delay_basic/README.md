@@ -4,6 +4,7 @@
 Selectrable 4 Head delay with Echorec timing
 
 TO DO:
+- When a note is played and then the delays are engaged the note still repeats, this is unexpected behavior and should be corrected.
 
 -----
 This is set up to use the Terrarium hardware system from PedalPCB.
