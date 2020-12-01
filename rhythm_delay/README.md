@@ -1,4 +1,4 @@
-#20201128 Sonic Explorer
+#20201130 Sonic Explorer
 
 # Description
 Selectrable 4 Head delay with Echorec timing
@@ -24,7 +24,7 @@ The right footswitch ramps the feedback to runaway (self-oscillation), the right
 | Ctrl 1 | Delay Time | All delays will be a fraction of this value |
 | Ctrl 2 | Dry/Wet | Set the dry/wet amount for the output |
 | Ctrl 3 | Feedback| For all 4 delays |
-| Ctrl 4 | Tone | left = HP_filter = darker, right = HP_filter = brighter - these only affect repeat|
+| Ctrl 4 | Tone | left = HP_filter = darker, right = HP_filter = brighter - these only affect repeats|
 | SW 1 - 4 | Delays On/Off | Each switch turns a delay head on/off |
 | FS 1 | Passthru | led1 illuminated when effect is set to ON |
 | FS 2 | Runaway Feedback | led2 illuminated when ramping feedback up and down|
