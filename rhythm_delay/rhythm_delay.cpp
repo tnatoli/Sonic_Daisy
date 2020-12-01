@@ -237,20 +237,13 @@ void ProcessControls()
     else
 	feedbackRunaway = false;
 
-
-    // **I think the ramp-up and ramp-down times of the feedbackRunaway could feel more natural if they varied based on the current length of the delay time
-    if(feedbackRunaway)	// If the switch is pressed, ramp up the feedback to maxRunawayFeedback -- this section can probably be moved to a fonepole statemtent in Delay
-	while(feedback<1.05f*maxRunawayFeedback) 
-	    //feedback = 1.1f*(delays[4].delayTarget)*maxRunawayFeedback;// the 1.1f here controls how fast the feedback ramps up -- **could control this value with a pot
-	    feedback = 1.05f*maxRunawayFeedback;// the numerical pre-factor here controls how fast the feedback ramps up
+    // **I think the ramp-up and ramp-down times feel a bit better, but if they varied based on the current length of the delay time it might be better
+    //    Right now he noise floor rises pretty high during runawayFeedback for longer delays
+    if(feedbackRunaway)
+	//If FS_2 is pressed, start bringing the feedback up to maxRunawayFeedback
+	fonepole(feedback, maxRunawayFeedback, 0.002f); //decrease the number for a faster ramp & vice-versa
     else
-	{  //if the footswitch is not pressed, but the current feedback level is higher than the feedback pot value we must ramp the feedback down slowly to the knob value
-	    //// feedback is the current level, feedbackParam.Value() is the feedback-pot value
-	    if(feedback > 1.01f*feedbackParam.Value())// If the current level of feedback is more than 1% the value of the feedback knob take the feedback down slowly
-		feedback = feedback*.999f; // The numerical prefactor here sets how fast the feedback is ramped down to the value of the feedback knob -- **could control this value with a pot
-	    else
-		// if the feedback level is near the knob level
-		feedback = feedbackParam.Process();
-	}
+	//Bring the feedback to be equal to the knob value, if FS_2 was not pressed this will aleady be the case
+	fonepole(feedback, feedbackParam.Process(), 0.001f); //decrease the number for a faster ramp & vice-versa
 }
 

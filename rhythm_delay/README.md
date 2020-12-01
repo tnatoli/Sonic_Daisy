@@ -5,7 +5,7 @@ Selectrable 4 Head delay with Echorec timing
 
 TO DO:
  - When a note is played and then the delays are engaged the note still repeats, this is unexpected behavior and should be corrected.
- - When runaway feedback is engaged the delays have a sharp edge to them. Can maybe get rid of this by ramping feedback slower to start with.
+ - runaway feedback for longer delay times seems to raise the noise floor up way too much
  
 -----
 This is set up to use the Terrarium hardware system from PedalPCB.
