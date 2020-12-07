@@ -154,6 +154,11 @@ int main(void)
     float samplerate;
     petal.Init(); // Initialize hardware (daisy seed, and petal)
     samplerate = petal.AudioSampleRate();
+    /************************************************************************************************************/
+    /************************************************************************************************************/
+    // If you have a noise line at 1kHz adjusting the number blow from 48 to 12 may help reduce the noise line. 
+    petal.SetAudioBlockSize(48);////////Adjust the blocksize - setting this to 12 moves the noise line to 4kHz and reduces it                                                                          /************************************************************************************************************/
+    /************************************************************************************************************/
 
     // Initialize the delay lines
     InitDelays(samplerate);

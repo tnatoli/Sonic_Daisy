@@ -10,6 +10,8 @@ TO DO:
 -----
 This is set up to use the Terrarium hardware system from PedalPCB.
 
+** If you are getting a noise line at 1kHz (and harmonics: 2kHz, 3kHz, 4kHz, etc) try changing the blocksize from 48 to 12 (there is a note about this in the code).
+
 The delay spacings are set like the Echorc (1/16 note, 1/8 note, dotted 1/8 note, 1/4 note - or 0.25,0.5,0.75,1).
 Longest delay currently set to 3 seconds for delay head 4.
 All delay times are set with with Pot 1 (current max 3 second). Feedback for all 4 delays controlled by Pot 3.
