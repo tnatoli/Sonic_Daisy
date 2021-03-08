@@ -6,7 +6,6 @@ Compiled with the DaisyExamples git hash: a6de44acedf955da11c7974c3578253719b635
 # Description
 Selectrable 4 Head delay with Echorec timing
 
------
 This is set up to use the Terrarium hardware system from PedalPCB.
 
 The delay spacings are set like the Echorc (1/16 note, 1/8 note, dotted 1/8 note, 1/4 note - or 0.25,0.5,0.75,1).
@@ -32,8 +31,8 @@ The right LED shows how much the current feedback level is above the feedback po
 | SW 1 - 4 | Delays On/Off | Each switch turns a delay head on/off |
 | FS 1 | Bypass/Active | Changes the status of the pedal from audio being passed through the pedal unaffected to having delays added |
 | FS 2 | Secondary Feedback | Sets the feedback at 0.95 to produce a kind of sound-on-sound where repeats take a very long time to decay |
-| LED 1 | Illuminated when effect is set to Active |
-| LED 2 | Shows the delay time of head 4 |
+| LED 1 | Bypass/Active Indicator |Illuminated when effect is set to Active |
+| LED 2 | Delay Time Indicator | Shows the delay time of head 4 |
 | Audio In 1 | Audio input | |
 | Audio Out 1 | Mix Out | |
 
