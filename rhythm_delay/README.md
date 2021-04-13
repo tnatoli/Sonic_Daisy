@@ -51,4 +51,4 @@ POTENTIAL MODS:
 
 VERSION HISTORY:
  - 20201130 v1
- - 20210208 v2 - No more 1kHz whine, added Age & Swell controls. 
+ - 20210308 v2 - No more 1kHz whine, added Age & Swell controls. 
