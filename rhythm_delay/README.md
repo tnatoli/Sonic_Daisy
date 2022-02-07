@@ -1,7 +1,8 @@
-20210308 Sonic Explorer
+20220206 Sonic Explorer
 
-# Rhythmic Delay v2.0
-Compiled with the DaisyExamples git hash: a6de44acedf955da11c7974c3578253719b63554
+# Rhythmic Delay v2.1
+Compiled with the DaisyExamples git hash: d982852292c16ccd6884f5f1313223c4bd66daeb
+This version works with Seed v1 and Seed v1.1
 
 # Description
 Selectrable 4 Head delay with Echorec timing

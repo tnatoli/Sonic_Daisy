@@ -1,4 +1,4 @@
-////// Rhythm Delay v2 - 20210308 - Written by Sonic Explorer //////
+////// Rhythm Delay v2.1 - 20220206 - Written by Sonic Explorer //////
 #include "daisysp.h"
 #include "daisy_petal.h"
 #include "terrarium.h"
@@ -87,7 +87,12 @@ void ProcessControls(int part);//this has to be declared above the AudioCallback
 
 int call_counter = 0;//This counts how many times audiocallback has been ran.
 int process_counter = 0;//this keeps track of how many times the same part of procescontrol is ran. 
-static void AudioCallback(float **in, float **out, size_t size)
+static void AudioCallback(AudioHandle::InputBuffer in,
+			  AudioHandle::OutputBuffer out,
+			  //AudioHandle::InterleavingInputBuffer  in,
+                          //AudioHandle::InterleavingOutputBuffer out,
+                          size_t                                size)
+                          //float **in, float **out, size_t size)
 {
     call_counter+=1;
     int n_cases = 4;//the total amount of 'parts' ProcessControl is split into
@@ -121,6 +126,7 @@ static void AudioCallback(float **in, float **out, size_t size)
 	    if(passThruOn){ // This if statement makes the Daisy only process the input through the delays when the pedal is turned 'on'
 		// Do below if the pedal is in 'bypass' mode
 		out[0][i] = in[0][i]; // in[0][i] is the input audio, out[0][i] is the output audio
+		out[1][i] = in[0][i]; // Something is odd with the audio_Out channels on the the Seedv1.1, so we send the audio in to both audio outs. 
 		// The for statment below takes the feedback to 0 when the pedal is off, which *almost* clears the repeats, but not if the pedal is turned off and on again quickly. 
 		for(int d = 0; d < 4; d++){
 		    delays[d].feedback = 0;
@@ -172,9 +178,11 @@ static void AudioCallback(float **in, float **out, size_t size)
 		
 		// Use a crossfade object to maintain a constant power while creating the delayed/raw audio mix
 		cfade.SetPos(drywet_ratio);
-		final_mix = cfade.Process(in[0][i], all_delay_signals);
+		//final_mix = cfade.Process(in[i], all_delay_signals);
+		float orig = in[0][i]; // I don't exactly know why I have to do this, but something with the pointing is not behaving with cfade
+		final_mix = cfade.Process(orig, all_delay_signals);
 		out[0][i] = final_mix; // this sends 'final_mix' to the (left) audio
-
+		out[1][i] = final_mix; // Something is odd with the audio_Out channels on the the Seedv1.1, so we send the effected audio to both audio outs. 
 	    }
 	    if(dac_output){
 		petal.seed.dac.WriteValue(DacHandle::Channel::TWO, (mod_out+1)*1000);
