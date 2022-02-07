@@ -2,6 +2,7 @@
 
 # Rhythmic Delay v2.1
 Compiled with the DaisyExamples git hash: d982852292c16ccd6884f5f1313223c4bd66daeb
+
 This version works with Seed v1 and Seed v1.1
 
 # Description
@@ -53,3 +54,4 @@ POTENTIAL MODS:
 VERSION HISTORY:
  - 20201130 v1
  - 20210308 v2 - No more 1kHz whine, added Age & Swell controls. 
+ - 20220206 v2.1 - Updated to work with current version of Daisy codebase and with new Seed v1.1.
