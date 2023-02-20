@@ -14,7 +14,7 @@ I typically just use this to test other pedals, but it could be used a basic noi
 
 | Control | Description | Comment |
 | --- | --- | --- |
-| Ctrl 1 | Mix | Sets the dry/wet amount for the outputs, wet here is the oscillator + noise |
+| Ctrl 1 | Mix | Sets the dry/wet amount for the outputs, dry is whatever is going into the pedal, wet is the oscillator + noise |
 | Ctrl 2 | Octave | Sets the octave range of the oscillator |
 | Ctrl 3 | Frequency | Set the frequency of the oscillator note inside the octave |
 | Ctrl 4 | Noise | Adjusts the mix of oscillator signal to white noise, more white noise is clockwise|
