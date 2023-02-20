@@ -29,6 +29,11 @@ I typically just use this to test other pedals, but it could be used a basic noi
 | Audio Out 1 | Mix Out | |
 | Audio Out 2 | Mix Out | |
 
+
+![Conrtrols Image](simple_noises.png?raw=true)
+
+
+
 ------
 
 TO DO:
