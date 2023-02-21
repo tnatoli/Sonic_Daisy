@@ -1,7 +1,7 @@
 20230120 Sonic Explorer
 
 # Sample Noises
-Compiled with the DaisyExamples git hash: 
+Compiled with the DaisyExamples git hash: cc63dcc72cfb1ada4cd99720f56a113cbde0e8ad
 
 # Description
 An oscillator with selectable shape, chord voicing, and white noise. 
